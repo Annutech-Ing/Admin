@@ -1,6 +1,7 @@
 <?php
     include '../conexion/Conexion.php';
-
+    include './Funciones.php';
+    
     $resumen = filter_input(INPUT_POST, 'resumen');
     $usuario = filter_input(INPUT_POST, 'usuario');
     $ip = filter_input(INPUT_POST, 'ip');
@@ -42,7 +43,7 @@
 
                 echo "<td>".$row['log_id']."</td>
                 <td>".$row['log_resumen']."</td>
-                <td>".$row['log_fecha']."</td>
+                <td>".Funciones::formatoFecha($row['log_fecha'])."</td>
                 <td>".$row['usuario_nombre']."</td>";
                 echo "<td>".$row['log_ip']."</td>";
             $linea++;
@@ -51,4 +52,6 @@
     } catch (Exception $exc) {
         echo $exc->getTraceAsString();
     }
+    
+    error_reporting(E_ALL);
 ?>   
