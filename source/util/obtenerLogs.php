@@ -2,6 +2,9 @@
     include '../conexion/Conexion.php';
     include './Funciones.php';
     
+    $arrayText = array ("Código:", "Nombre:" ,"PrecioCosto:"," PrecioVenta:");
+    
+    
     $resumen = filter_input(INPUT_POST, 'resumen');
     $usuario = filter_input(INPUT_POST, 'usuario');
     $ip = filter_input(INPUT_POST, 'ip');
@@ -40,7 +43,7 @@
                 echo "<tr'>";
             }
                 echo "<td>".$row['log_id']."</td>
-                <td>".Funciones::formatoResumen($row['log_resumen'])."</td>
+                <td>".Funciones::formatoResumen($resumen, $arrayText)."</td>
                 <td>".Funciones::formatoFecha($row['log_fecha'])."</td>
                 <td>".$row['usuario_nombre']."</td>";
                 echo "<td>".$row['log_ip']."</td>";

@@ -16,7 +16,7 @@ class Funciones {
     public static function formatoFecha($fecha)
     {
                        
-        $fecha = "2019-09-15 5:35 PM";  
+        $fecha = "";  
         $newDate = date("d-m-Y H:i", strtotime($fecha));  
         //echo "La FECHA ERA ASI: $fecha Y AHORA ES ASI ".$newDate. "";  
         
@@ -27,20 +27,18 @@ class Funciones {
     
     public static function formatoResumen($resumen,$textoExtra)
     {
-        $resumen = "2222%pera%84,03%168,07";
-        $array = explode('%',$resumen);
         
-        $textoExtra = "Código: Nombre: PrecioCosto: PrecioVenta:";
-        $arrayText = explode(' ', $textoExtra);
-         
-        for($i=0; $i<count($array); $i++)
+        $arrayResumen = explode('%',$resumen);
+        $contenidoImp="";
+        
+        for($i=0; $i<count($arrayResumen); $i++)
         {
-	  echo $arrayText[$i].'   ',$array[$i];
+            $contenidoImp .= $textoExtra[$i].' '.$arrayResumen[$i];
           
-	  echo "<br>";
+            echo "<br>";
         }
         
-        
+        return $contenidoImp;
 
     }
     
