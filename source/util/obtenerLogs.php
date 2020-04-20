@@ -29,7 +29,6 @@
         if($resumen != ""){
             $qryResumen = " AND log_resumen LIKE '%$resumen%'";
         }
-        
         $query = "SELECT * FROM tbl_log LEFT JOIN tbl_usuario ON log_usuario = usuario_id ORDER BY log_fecha DESC LIMIT 100";
         $conn->conectar();
         $result = mysqli_query($conn->conn,$query); 
@@ -40,9 +39,8 @@
             else{
                 echo "<tr'>";
             }
-
                 echo "<td>".$row['log_id']."</td>
-                <td>".$row['log_resumen']."</td>
+                <td>".Funciones::formatoResumen($row['log_resumen'])."</td>
                 <td>".Funciones::formatoFecha($row['log_fecha'])."</td>
                 <td>".$row['usuario_nombre']."</td>";
                 echo "<td>".$row['log_ip']."</td>";

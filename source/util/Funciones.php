@@ -21,18 +21,40 @@ class Funciones {
         //echo "La FECHA ERA ASI: $fecha Y AHORA ES ASI ".$newDate. "";  
         
         return $newDate;
-        
-        
-        //$fecha = "2019/13/06 5:35 PM";  
-        //converts date and time to seconds  
-        //$sec = strtotime($fecha);  
-        //converts seconds into a specific format  
-        //$nuevaFecha = date ("Y/d/m H:i", $sec);  
-        //Appends seconds with the time  
-        //$nuevaFecha = $nuevaFecha . ":00";  
-        // display converted date and time  
-        //echo "New date time format is: ".$nuevaFecha;    
+         
     }
+    
+    
+    public static function formatoResumen($resumen,$textoExtra)
+    {
+        $resumen = "2222%pera%84,03%168,07";
+        $array = explode('%',$resumen);
+        
+        $textoExtra = "Código: Nombre: PrecioCosto: PrecioVenta:";
+        $arrayText = explode(' ', $textoExtra);
+         
+        for($i=0; $i<count($array); $i++)
+        {
+	  echo $arrayText[$i].'   ',$array[$i];
+          
+	  echo "<br>";
+        }
+        
+        
+
+    }
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
     
     
 }
