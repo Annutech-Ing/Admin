@@ -7,7 +7,6 @@ include '../util/Funciones.php';
  */
 
 
-Funciones::formatoFecha('2020-01-01 00:00:00'); 
     $fechaFinal = Funciones::formatoFecha('2020-01-01 00:00:00');
     echo $fechaFinal;
     \error_reporting(E_ALL);

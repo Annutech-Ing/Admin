@@ -16,7 +16,6 @@ class Funciones {
     public static function formatoFecha($fecha)
     {
                        
-        $fecha = "";  
         $newDate = date("d-m-Y H:i", strtotime($fecha));  
         //echo "La FECHA ERA ASI: $fecha Y AHORA ES ASI ".$newDate. "";  
         
@@ -25,21 +24,30 @@ class Funciones {
     }
     
     
-    public static function formatoResumen($resumen,$textoExtra)
+    public static function formatoResumen($resumen,$arrayText,$tipo)
     {
-        
         $arrayResumen = explode('%',$resumen);
         $contenidoImp="";
         
-        for($i=0; $i<count($arrayResumen); $i++)
+        if ($tipo == '11' ||$tipo =='14' || $tipo=='17'|| $tipo=='24' ) 
         {
-            $contenidoImp .= $textoExtra[$i].' '.$arrayResumen[$i];
-          
-            echo "<br>";
+            for($i=0; $i<count($arrayText); $i++)
+            {
+                if ($i>0) {
+                    $contenidoImp .= '  '.$arrayText[$i].'   '.$arrayResumen[$i].' ';
+                    echo "<br>";
+                }
+                else {
+                    $contenidoImp .= '    '.$arrayResumen[$i].' ';
+                }
+            }
+            return $contenidoImp;
+        }
+        else 
+        {
+            return $resumen;
         }
         
-        return $contenidoImp;
-
     }
     
     
