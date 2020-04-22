@@ -33,6 +33,7 @@
             $qryResumen = " AND log_resumen LIKE '%$resumen%'";
         }
         $query = "SELECT * FROM tbl_log LEFT JOIN tbl_usuario ON log_usuario = usuario_id ORDER BY log_fecha DESC LIMIT 100";
+        echo '<div>'.$query. '</div>' ;
         $conn->conectar();
         $result = mysqli_query($conn->conn,$query); 
         while($row = mysqli_fetch_array($result)) {
