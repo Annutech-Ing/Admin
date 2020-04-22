@@ -33,7 +33,7 @@
             $qryResumen = " AND log_resumen LIKE '%$resumen%'";
         }
         $query = "SELECT * FROM tbl_log LEFT JOIN tbl_usuario ON log_usuario = usuario_id ORDER BY log_fecha DESC LIMIT 100";
-        echo '<div>'.$query. '</div>' ;
+        '<tr><td>'.$query. '</td></tr>' ;
         $conn->conectar();
         $result = mysqli_query($conn->conn,$query); 
         while($row = mysqli_fetch_array($result)) {
@@ -43,7 +43,7 @@
             else{
                 echo "<tr'>";
             }
-                echo "<td>".$row['log_id']."</td>
+                echo "<td>".$query."</td>
                 <td>".Funciones::formatoResumen($row['log_resumen'], $arrayText, $row['log_tipo'])."</td>
                 <td>".Funciones::formatoFecha($row['log_fecha'])."</td>
                 <td>".$row['usuario_nombre']."</td>";
@@ -55,5 +55,5 @@
         echo $exc->getTraceAsString();
     }
     
-    error_reporting(E_ALL);
+
 ?>   
