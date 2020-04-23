@@ -2,6 +2,7 @@
     include '../conexion/Conexion.php';
     include './Funciones.php';
     
+    $file = "archivo.txt";
     $arrayText = array ("Código: ", "Nombre: " ,"Precio Costo: "," Precio Venta: ");
     
     
@@ -33,6 +34,7 @@
             $qryResumen = " AND log_resumen LIKE '%$resumen%'";
         }
         $query = "SELECT * FROM tbl_log LEFT JOIN tbl_usuario ON log_usuario = usuario_id ORDER BY log_fecha DESC LIMIT 100";
+        $archivo = Funciones::archivoTexto($file);
         '<tr><td>'.$query. '</td></tr>' ;
         $conn->conectar();
         $result = mysqli_query($conn->conn,$query); 
@@ -41,9 +43,9 @@
                 echo "<tr style='background-color:white;'>";
             }
             else{
-                echo "<tr'>";
+                echo "<tr>";
             }
-                echo "<td>".$query."</td>
+                echo "<td>".$row['log_id']."</td>
                 <td>".Funciones::formatoResumen($row['log_resumen'], $arrayText, $row['log_tipo'])."</td>
                 <td>".Funciones::formatoFecha($row['log_fecha'])."</td>
                 <td>".$row['usuario_nombre']."</td>";

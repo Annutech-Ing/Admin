@@ -51,16 +51,26 @@ class Funciones {
     }
     
     
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
+    public static function archivoTexto($file)
+    {
+        $file = fopen("archivo.txt", "a")
+        or die("Problema al crear archivo");
+
+        fwrite($file, "Esta es una prueba bro ");
+        fwrite($file, "\n");
+        fclose($file);
+        
+        return $file;
+        
+        
+        //$file = fopen("arcchivo.txt", "r")
+        //or die("Problema al abrir arichivo");
+        //while (!feof($file))
+        //{
+        //    $leer = fgetc($file);
+        //    $imprimir = nl2br($leer);
+        //    echo $imprimir;
+        //}
+    }
+
 }

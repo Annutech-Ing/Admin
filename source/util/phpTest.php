@@ -18,3 +18,4 @@ include '../util/Funciones.php';
     \error_reporting(E_ALL);
     echo "$resumenFinal";
     
+    
