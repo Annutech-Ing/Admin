@@ -6,15 +6,9 @@
     $arrayText = array ("Código: ", "Nombre: " ,"Precio Costo: "," Precio Venta: ");
     
     
-<<<<<<< HEAD
     $resumen = filter_input(INPUT_POST, 'resumen');//valor formulario <--------------------------
     $usuario = filter_input(INPUT_POST, 'usuario');
     $ip      = filter_input(INPUT_POST, 'ip');
-=======
-    $resumen = filter_input(INPUT_POST, 'resumen');
-    $usuario = filter_input(INPUT_POST, 'usuario');
-    $ip = filter_input(INPUT_POST, 'ip');
->>>>>>> c02008f14ee3e92d5249c4c67587c82c7b12809b
     if(filter_input(INPUT_POST, 'desde') != '')
     {
         $desde = DateTime::createFromFormat('d/m/Y', filter_input(INPUT_POST, 'desde'))->format('Y/m/d');
@@ -35,21 +29,15 @@
     $linea = 0;
     $conn = new Conexion();
     try {
-<<<<<<< HEAD
         $qryResumen = "";//esta variable trae el where si resumen no es vacio
-        if($resumen != ""){
-            $qryResumen = "WHERE log_resumen LIKE '%$resumen%' AND log_usuario = '%$usuario%' AND log_ip LIKE'%$ip%' AND log_fecha BETWEEN CAST('%$desde%' AS DATE) AND CAST('%$hasta%' AS DATE) AND log_tipo ='%$tipo%'";
+        if($tipo != ""){//este es el query-> 
+            $qryResumen = "WHERE log_resumen LIKE '%$resumen%' AND log_usuario = '%$usuario%' AND log_ip LIKE'%$ip%' AND log_fecha BETWEEN CAST('$desde' AS DATE) AND CAST('$hasta' AS DATE) AND log_tipo ='$tipo'";
         }
-        $query = "SELECT * FROM tbl_log LEFT JOIN tbl_usuario ON log_usuario = usuario_id ".$qryResumen." ORDER BY log_fecha DESC LIMIT 100";
-=======
-        $qryResumen = "";
-        if($resumen != ""){
-            $qryResumen = " AND log_resumen LIKE '%$resumen%'";
-        }
-        $query = "SELECT * FROM tbl_log LEFT JOIN tbl_usuario ON log_usuario = usuario_id ORDER BY log_fecha DESC LIMIT 100";
->>>>>>> c02008f14ee3e92d5249c4c67587c82c7b12809b
+        //else {
+            $query = "SELECT * FROM tbl_log LEFT JOIN tbl_usuario ON log_usuario = usuario_id ".$qryResumen." ORDER BY log_fecha DESC LIMIT 100";
+        //}
         $archivo = Funciones::archivoTexto($file);
-        '<tr><td>'.$query. '</td></tr>' ;
+        echo '<tr><td>'.$query. '</td></tr>' ;
         $conn->conectar();
         $result = mysqli_query($conn->conn,$query); 
         while($row = mysqli_fetch_array($result)) {
@@ -67,10 +55,7 @@
             $linea++;
             echo "</tr>";
         }
-<<<<<<< HEAD
         echo '<tr><td>'.$query. '</td></tr>' ;
-=======
->>>>>>> c02008f14ee3e92d5249c4c67587c82c7b12809b
     } catch (Exception $exc) {
         echo $exc->getTraceAsString();
     }

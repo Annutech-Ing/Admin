@@ -5,61 +5,37 @@
             Resumen
         </div>
         <div>
-<<<<<<< HEAD
             <input type="text" name="resumen" id="resumen" >
-=======
-            <input type="text" id="resumen" >
->>>>>>> c02008f14ee3e92d5249c4c67587c82c7b12809b
         </div>
         <div>
             Usuario
         </div>
         <div>
-<<<<<<< HEAD
             <input type="text" name="usuario" id="usuario" >
-=======
-            <input type="text" id="usuario" >
->>>>>>> c02008f14ee3e92d5249c4c67587c82c7b12809b
         </div>
         <div>
             IP
         </div>
         <div>
-<<<<<<< HEAD
             <input type="text" name="ip" id="ip" >
-=======
-            <input type="text" id="ip" >
->>>>>>> c02008f14ee3e92d5249c4c67587c82c7b12809b
         </div>
         <div>
             Fecha desde
         </div>
         <div>
-<<<<<<< HEAD
             <input type="text" name="desde" id="desde" >
-=======
-            <input type="text" id="desde" >
->>>>>>> c02008f14ee3e92d5249c4c67587c82c7b12809b
         </div>
         <div>
             Fecha hasta
         </div>
         <div>
-<<<<<<< HEAD
             <input type="text" name="hasta" id="hasta" >
-=======
-            <input type="text" id="hasta" >
->>>>>>> c02008f14ee3e92d5249c4c67587c82c7b12809b
         </div>
         <div>
             Tipo
         </div>
         <div>
-<<<<<<< HEAD
             <select id="tipo"  name="tipo" width="50">
-=======
-            <select id="tipo"  width="50">
->>>>>>> c02008f14ee3e92d5249c4c67587c82c7b12809b
                 <option value="">Todos</option>
                 <option value="0">LOGIN</option>
                 <option value="1">LOGOUT</option>
