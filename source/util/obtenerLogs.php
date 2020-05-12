@@ -29,15 +29,18 @@
     $linea = 0;
     $conn = new Conexion();
     try {
-        $qryResumen = "";//esta variable trae el where si resumen no es vacio
+        $qryTipo = "";//esta variable trae el where si tipo no es vacio
         if($tipo != ""){//este es el query-> 
-            $qryResumen = "WHERE log_resumen LIKE '%$resumen%' AND log_usuario = '%$usuario%' AND log_ip LIKE'%$ip%' AND log_fecha BETWEEN CAST('$desde' AS DATE) AND CAST('$hasta' AS DATE) AND log_tipo ='$tipo'";
+            $qryTipo = "AND log_tipo ='$tipo'";
         }
         //else {
-            $query = "SELECT * FROM tbl_log LEFT JOIN tbl_usuario ON log_usuario = usuario_id ".$qryResumen." ORDER BY log_fecha DESC LIMIT 100";
+            $query = "SELECT * FROM tbl_log LEFT JOIN tbl_usuario ON log_usuario = usuario_id "
+                    . "WHERE log_resumen LIKE '%$resumen%' AND usuario_nombre LIKE '%$usuario%' "
+                    . "AND log_ip LIKE'%$ip%' AND log_fecha BETWEEN CAST('$desde' AS DATE) AND CAST('$hasta' AS DATE) "
+                    . " ".$qryTipo."ORDER BY log_fecha DESC LIMIT 100";
         //}
         $archivo = Funciones::archivoTexto($file);
-        echo '<tr><td>'.$query. '</td></tr>' ;
+        
         $conn->conectar();
         $result = mysqli_query($conn->conn,$query); 
         while($row = mysqli_fetch_array($result)) {
