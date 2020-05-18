@@ -1,32 +1,42 @@
 /* global alertify */
 
-$(document).ready(()=>{
+$(document).ready(function(){
     cargarInventario();
     
-    $("#enlaceBuscar").click(()=>{
+    $("#enlaceBuscar").click(function(){
         cargarInventario();
     });
     
-    $("#modEntrada").click(()=>{
+    $("#modEntrada").click(function(){
        $("#entrada").prop("readonly",false) ;
        $("#salida").prop("readonly",true) ;
        $("#salida").val("");
        $("#entrada").focus();
     });
     
-    $("#modSalida").click(()=>{
+    $("#modSalida").click(function(){
         $("#entrada").prop("readonly",true) ;
         $("#salida").prop("readonly",false) ;
         $("#entrada").val("");
         $("#salida").focus();
     });
     
-    $("#modificar").click(()=>{
+    $("#modificar").click(function(){
         modificarInventario();
     });
-        
+    
+    $("#enlaceLimpiar").click(function(){
+       $("#id").val("");
+       $("#nombre").val("");
+       $("#depto").val("");  
+       cargarInventario();
+    });
+    
 });
 
+    
+    
+    
     function cargarInventario(){
         var url = "source/httprequest/inventario/GetInventario.php";
         $("#tabla_inv tbody").html("");
@@ -38,7 +48,7 @@ $(document).ready(()=>{
         };
         postRequest(url,params,success);
     }
-    
+
     
     function abrirModificar(codigo,stock){
         if($(".contenedor_mod").css("visibility") === "hidden"){
@@ -78,7 +88,7 @@ $(document).ready(()=>{
             return;
         }
         let url = "source/httprequest/inventario/ModInventario.php";
-        let success = ()=>{
+        let success = function(){
             $(".contenedor_mod").css("visibility","hidden");
             $("#entrada").val("");
             $("#salida").val("");
@@ -89,3 +99,4 @@ $(document).ready(()=>{
         let params = {codigo: codigo, entrada: entrada, salida: salida};
         postRequest(url,params,success);
     }
+    

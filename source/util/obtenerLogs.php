@@ -58,7 +58,7 @@
             $linea++;
             echo "</tr>";
         }
-        echo '<tr><td>'.$query. '</td></tr>' ;
+        
     } catch (Exception $exc) {
         echo $exc->getTraceAsString();
     }

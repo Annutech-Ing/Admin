@@ -1,6 +1,6 @@
 <script src="js/inventario.js"></script>
 <div class="buscador_ventas">
-    <div class="contenedor_busc">
+    <div class="contenedor_busc" >
         <div>
             Código
         </div>
@@ -21,6 +21,8 @@
         </div>
 
         <a class="boton" id="enlaceBuscar">BUSCAR</a>
+        
+        <a class="boton" id="enlaceLimpiar">LIMPIAR</a>
     </div>
     <div class="contenedor_mod" style="visibility: hidden">
         <div>
@@ -49,7 +51,7 @@
             <input type="text" id="salida" readonly="">
             <div id="modSalida" class="boton-chico">-</div>
         </div>
-        <div class="boton" id="modificar">Modificar</div>
+        <div class="boton" id="modificar">Modificar </div>
     </div>
 </div>
 <div class="contenedor-tabla">

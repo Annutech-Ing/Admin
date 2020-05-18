@@ -44,11 +44,12 @@
                 echo "<td>".$row['departamento_nombre']."</td>";
                 echo "<td>".$row['producto_precio']."</td>";
                 echo "<td>".$cantidad."</td>";
-                echo "<td><a onclick=\"abrirModificar(".$row['producto_id'].",$cantidad)\" href=\"javascript:void(0)\">MODIFICAR</a></td>";
+                echo "<td><a  onclick=\"abrirModificar(".$row['producto_id'].",$cantidad) \" href=\"javascript:void(0)\"><img src='img/editar_inventario.png'</a></td>" ;
             $linea++;
             echo "</tr>";
         }
     } catch (Exception $exc) {
         echo $exc->getTraceAsString();
+        
     }
 ?>   
