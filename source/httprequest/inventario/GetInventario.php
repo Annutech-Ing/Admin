@@ -9,7 +9,7 @@
     try {
         $qryId = "";
         if($id != ""){
-            $qryId = " AND producto_id = $id ";
+            $qryId = " AND producto_id LIKE '%$id%' ";
         }
         $qryNombre = "";
         if($nombre != ""){
