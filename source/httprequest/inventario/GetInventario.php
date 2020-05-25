@@ -42,7 +42,16 @@
                 echo "<td>".$row['producto_nombre']."</td>";
                 echo "<td>".$row['producto_descripcion']."</td>";
                 echo "<td>".$row['departamento_nombre']."</td>";
-                echo "<td>".$row['producto_precio']."</td>";
+                echo "<td>".($row['producto_precio'] + $row['producto_precio_iva'])."</td>";
+                echo "<td>".$row['producto_tipo']."</td>";
+                if ($row['producto_tipo'] == 0) {
+                    echo $cantidad =  round($cantidad,0);
+                }elseif ($row['producto_tipo'] == 1 ) {
+                    echo $cantidad =  round($cantidad,2);
+                }
+                elseif ($row['producto_tipo'] == 2 ) {
+                    echo $cantidad =  round($cantidad,2);
+                }
                 echo "<td>".$cantidad."</td>";
                 echo "<td><a  onclick=\"abrirModificar(".$row['producto_id'].",$cantidad) \" href=\"javascript:void(0)\"><img src='img/editar_inventario.png'</a></td>" ;
             $linea++;
