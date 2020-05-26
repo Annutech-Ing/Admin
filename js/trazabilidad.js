@@ -5,6 +5,7 @@ $(document).ready(function(){
     $("#enlaceBuscar").click(function(){
         cargarLogs();
     });
+<<<<<<< HEAD
        
     $("#enlaceLimpiar").click(function(){
        $("#resumen").val("");
@@ -16,6 +17,9 @@ $(document).ready(function(){
        cargarLogs();
     });
     
+=======
+        
+>>>>>>> 7f9da37ab96a45474e9d754b514d134cc39490ff
 });
 
     function cargarLogs(){

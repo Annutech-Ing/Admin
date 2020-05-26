@@ -63,6 +63,7 @@ $(document).ready(function(){
         let stock = $("#stockMod").val();
         let entrada = $("#entrada").val();
         let salida = $("#salida").val(); 
+        let salida = $("#salida").val();
         if(!validarNumero(entrada) && salida === ""){
             alertify.error("Entrada debe ser numerico");
             return;

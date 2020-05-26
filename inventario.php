@@ -41,13 +41,23 @@
             Entrada
         </div>
         <div>
+<<<<<<< HEAD
             <input type="text" id="entrada" >
+=======
+            <input type="text" id="entrada" readonly="">
+            <div id="modEntrada" class="boton-chico">+</div>
+>>>>>>> 7f9da37ab96a45474e9d754b514d134cc39490ff
         </div>
         <div>
             Salida
         </div>
         <div>
+<<<<<<< HEAD
             <input type="text" id="salida">
+=======
+            <input type="text" id="salida" readonly="">
+            <div id="modSalida" class="boton-chico">-</div>
+>>>>>>> 7f9da37ab96a45474e9d754b514d134cc39490ff
         </div>
         <div class="boton" id="modificar">Modificar </div>
     </div>

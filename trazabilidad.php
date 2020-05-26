@@ -71,8 +71,11 @@
             </select>
         </div>      
         <a class="boton" id="enlaceBuscar">BUSCAR</a>
+<<<<<<< HEAD
         
         <a class="boton" id="enlaceLimpiar">LIMPIAR</a>
+=======
+>>>>>>> 7f9da37ab96a45474e9d754b514d134cc39490ff
     </div>
 </div>
 <div class="contenedor-tabla">

@@ -51,6 +51,7 @@
                 elseif ($row['producto_tipo'] == 2 ) {
                     echo $cantidad =  round($cantidad,2);
                 }
+                echo "<td>".$row['producto_precio']."</td>";
                 echo "<td>".$cantidad."</td>";
                 echo "<td><a  onclick=\"abrirModificar(".$row['producto_id'].",$cantidad) \" href=\"javascript:void(0)\"><img src='img/editar_inventario.png'</a></td>" ;
             $linea++;
