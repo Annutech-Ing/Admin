@@ -62,13 +62,17 @@ $(document).ready(function(){
         let codigo = $("#idMod").val();
         let stock = $("#stockMod").val();
         let entrada = $("#entrada").val();
-        let salida = $("#salida").val();
+        let salida = $("#salida").val(); 
         if(!validarNumero(entrada) && salida === ""){
             alertify.error("Entrada debe ser numerico");
             return;
         }
         else if(!validarNumero(salida) && entrada === ""){
             alertify.error("Salida debe ser numerico");
+            return;
+        }
+        else if(!validarNumero(salida) && !validarNumero(entrada) ){
+            alertify.error("Entrada y Salida debe ser numerico");
             return;
         }
         else if(entrada === "" && salida === ""){

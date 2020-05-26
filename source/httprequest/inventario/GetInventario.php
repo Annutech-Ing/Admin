@@ -43,7 +43,6 @@
                 echo "<td>".$row['producto_descripcion']."</td>";
                 echo "<td>".$row['departamento_nombre']."</td>";
                 echo "<td>".($row['producto_precio'] + $row['producto_precio_iva'])."</td>";
-                echo "<td>".$row['producto_tipo']."</td>";
                 if ($row['producto_tipo'] == 0) {
                     echo $cantidad =  round($cantidad,0);
                 }elseif ($row['producto_tipo'] == 1 ) {
